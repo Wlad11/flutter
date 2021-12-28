@@ -77,6 +77,30 @@ class _FormWidget extends StatefulWidget {
 }
 
 class __FormWidgetState extends State<_FormWidget> {
+  final _loginTextControler = TextEditingController();
+  final _passwordTextControler = TextEditingController();
+  String? errorText = null;
+  void _auth() {
+    final login = _loginTextControler.text;
+    final password = _passwordTextControler;
+    if (login == "admin") // && password == "admin")
+    {
+      errorText = null;
+      //Проверка хуевая
+      print("хороший пароль");
+    } else {
+      errorText = 'Неверный логин или пароль';
+      print("хуевый пароль");
+    }
+    setState(() {
+      //без него не будет логи пароль показывать
+    });
+  }
+
+  void _resetPassword() {
+    print('Нет проверок  Password'); //Пока не знаю как делать переход
+  }
+
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(
@@ -92,18 +116,29 @@ class __FormWidgetState extends State<_FormWidget> {
       enabledBorder: OutlineInputBorder(),
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     );
+    final errorText = this.errorText;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start, //Прижал к краю
       children: [
+        if (errorText != null) ...[
+          //...[]Это такой рефакторинг убирает отступ в дарте и показывает когда надо
+          Text(
+            errorText,
+            style: const TextStyle(color: Colors.red, fontSize: 22),
+          ), //Проверка показывает но не убирается Только убирается с || а не &&
+          const SizedBox(height: 20),
+        ],
         const Text("Имя пользователя", style: textStyle),
         const SizedBox(height: 7),
-        const TextField(
+        TextField(
+            controller: _loginTextControler, //Какой вводит логин
             decoration: textFildDecoration,
-            style: TextStyle(color: Colors.amber, fontSize: 22)),
+            style: const TextStyle(color: Colors.amber, fontSize: 22)),
         const SizedBox(height: 15),
         const Text("Пароль", style: textStyle),
         const SizedBox(height: 7),
-        const TextField(
+        TextField(
+          controller: _passwordTextControler, //Какой вводит пароль
           decoration: textFildDecoration,
           obscureText: true, // obscureText Скрывает в звездочки
         ),
@@ -112,12 +147,12 @@ class __FormWidgetState extends State<_FormWidget> {
         Row(
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: _auth, //Проверяет метод
               child: const Text("Логин"),
               style: AppButtonStyle.linkButton, //В Theme
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: _resetPassword, //Потом менять наверно
               child: const Text("Пароль"),
               style: ButtonStyle(
                   // foregroundColor: MaterialStateProperty.all(Colors.white),
