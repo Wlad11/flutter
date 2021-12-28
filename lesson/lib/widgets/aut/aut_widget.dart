@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson/Theme/app_button_style.dart';
 
 class AutWidget extends StatefulWidget {
   const AutWidget({Key? key}) : super(key: key);
@@ -36,19 +37,31 @@ class _NeaderWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16), //Отступы от края
       child: Column(
-        children: const [
-          SizedBox(height: 20),
-          _FormWidget(), //Авторизация Пароль
-          SizedBox(height: 20),
-          Text(
+        children: [
+          const SizedBox(height: 20),
+          const _FormWidget(), //Авторизация Пароль
+          const SizedBox(height: 20),
+          const Text(
             "Чтобы пользоваться правкой и возможностями рейтинга TMDB, а также получить персональные рекомендации, необходимо войти в свою учётную запись. Если у вас нет учётной записи, её регистрация является бесплатной и простой. Нажмите здесь чтобы начать ",
             style: textStyle,
           ),
-          SizedBox(height: 20),
-          Text(
+          TextButton(
+            onPressed: () {},
+            child: const Text("Регистрация"),
+            style: AppButtonStyle.linkButton, //В Theme
+          ),
+          //  ),
+          const SizedBox(height: 20),
+          const Text(
             "Если Вы зарегистрировались, но не получили письмо для подтверждения, Нажмите здесь, чтобы отправить письмо повторно.",
             style: textStyle,
           ),
+          TextButton(
+            onPressed: () {},
+            child: const Text("Верификация Емеил"),
+            style: AppButtonStyle.linkButton, //В Theme
+          ),
+          // ElevatedButton(onPressed: () {}, child: Text('Верификация емеил')),
         ],
       ),
     );
@@ -101,13 +114,7 @@ class __FormWidgetState extends State<_FormWidget> {
             TextButton(
               onPressed: () {},
               child: const Text("Логин"),
-              style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
-                  backgroundColor: MaterialStateProperty.all(Colors.tealAccent),
-                  textStyle: MaterialStateProperty.all(const TextStyle(
-                      fontSize: 22, fontWeight: FontWeight.w700)),
-                  padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 25))),
+              style: AppButtonStyle.linkButton, //В Theme
             ),
             TextButton(
               onPressed: () {},
