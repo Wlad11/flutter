@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 abstract class AppButtonStyle {
- static final ButtonStyle linkButton = ButtonStyle(
+  static final ButtonStyle linkButton = ButtonStyle(
       foregroundColor: MaterialStateProperty.all(Colors.white),
       backgroundColor: MaterialStateProperty.all(Colors.tealAccent),
       textStyle: MaterialStateProperty.all(
@@ -10,3 +9,4 @@ abstract class AppButtonStyle {
       padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 25)));
 }
+// Добавлен routers:
