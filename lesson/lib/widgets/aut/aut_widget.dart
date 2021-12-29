@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lesson/Theme/app_button_style.dart';
 import 'package:lesson/main_screen/main_screen_widget.dart';
 
-//добавлен роутер
 class AutWidget extends StatefulWidget {
   const AutWidget({Key? key}) : super(key: key);
 
