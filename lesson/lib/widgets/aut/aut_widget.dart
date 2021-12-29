@@ -87,10 +87,10 @@ class __FormWidgetState extends State<_FormWidget> {
     if (login == "admin") // && password == "admin")
     {
       errorText = null;
-     final navigator =  Navigator.of(context); //Навигация на страницу
-      navigator.push(MaterialPageRoute<void>(builder: (context) => MainScreenWidget()));
-      //Проверка хуевая
-      //print("хороший пароль");
+      final navigator = Navigator.of(context); //Навигация на страницу
+      navigator.push(
+          MaterialPageRoute<void>(builder: (context) => MainScreenWidget()));
+//И тут сранный гит хаб конфликты указывает
     } else {
       errorText = 'Неверный логин или пароль';
       print("хуевый пароль");
