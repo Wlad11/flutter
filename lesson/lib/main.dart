@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      //Добавлен роутер
       routes: {
         '/auth': (context) => const AutWidget(),
         '/main_screen': (context) => const MainScreenWidget(),
