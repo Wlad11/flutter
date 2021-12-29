@@ -87,13 +87,16 @@ class __FormWidgetState extends State<_FormWidget> {
     if (login == "admin") // && password == "admin")
     {
       errorText = null;
-      final navigator = Navigator.of(context); //Навигация на страницу
-      navigator.push(
-          MaterialPageRoute<void>(builder: (context) => MainScreenWidget()));
-//И тут сранный гит хаб конфликты указывает
+      //Navigator.of(context).pushReplacementNamed('/main_screen');//не даст вернуться назад
+      Navigator.of(context).pushNamed('/main_screen');
+//Это без роутов routes:
+      //final navigator = Navigator.of(context); //Навигация на страницу
+      // navigator.push( Это без роутов routes:
+      //     MaterialPageRoute<void>(builder: (context) => const MainScreenWidget()));
+
     } else {
       errorText = 'Неверный логин или пароль';
-      print("хуевый пароль");
+      //  print("хуевый пароль");
     }
     setState(() {
       //без него не будет логи пароль показывать
