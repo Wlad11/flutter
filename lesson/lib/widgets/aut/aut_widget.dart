@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lesson/Theme/app_button_style.dart';
+import 'package:lesson/main_screen/main_screen_widget.dart';
 
 class AutWidget extends StatefulWidget {
   const AutWidget({Key? key}) : super(key: key);
@@ -86,8 +87,10 @@ class __FormWidgetState extends State<_FormWidget> {
     if (login == "admin") // && password == "admin")
     {
       errorText = null;
+     final navigator =  Navigator.of(context); //Навигация на страницу
+      navigator.push(MaterialPageRoute<void>(builder: (context) => MainScreenWidget()));
       //Проверка хуевая
-      print("хороший пароль");
+      //print("хороший пароль");
     } else {
       errorText = 'Неверный логин или пароль';
       print("хуевый пароль");
