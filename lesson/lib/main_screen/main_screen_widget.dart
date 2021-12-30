@@ -12,7 +12,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("TMDB")),
-    );
+        appBar: AppBar(title: const Text("TMDB")),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [],
+        ));
   }
 }
+//TODO: Проверям плагин
