@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson/Theme/app_colors.dart';
 import 'package:lesson/widgets/aut/aut_widget.dart';
 
 import 'main_screen/main_screen_widget.dart';
@@ -14,8 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Мир Кино',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          appBarTheme: const AppBarTheme(
+        backgroundColor:
+            AppColors.mainDarcColor, //Перенесена в константы что-ли называется
+      )
+          // primarySwatch: Colors.blue,
+          ),
 
       routes: {
         '/auth': (context) => const AutWidget(),
@@ -30,7 +35,6 @@ class MyApp extends StatelessWidget {
           return const Scaffold(
             body: Center(
               child: Text("Произошла ошибка навигации"),
-              
             ),
           );
         });
