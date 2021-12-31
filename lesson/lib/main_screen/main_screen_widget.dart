@@ -11,6 +11,7 @@ class MainScreenWidget extends StatefulWidget {
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectTab = 1; //перестроит на ту Icon которая нужна
   void onSelectTab(int index) {
+    if (_selectTab == index) return;
 //Будет окрашивать нажатую иконку
     setState(() {
       _selectTab = index;
