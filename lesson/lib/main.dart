@@ -15,12 +15,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Мир Кино',
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-        backgroundColor:
-            AppColors.mainDarcColor, //Перенесена в константы что-ли называется
-      )
-          // primarySwatch: Colors.blue,
-          ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors
+              .mainDarcColor, //Перенесена в константы что-ли называется
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            backgroundColor: AppColors.mainDarcColor,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.white70), //Нижний будет окрашен
+        // primarySwatch: Colors.blue,
+      ),
 
       routes: {
         '/auth': (context) => const AutWidget(),

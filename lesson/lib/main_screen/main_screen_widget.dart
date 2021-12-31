@@ -20,7 +20,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
               label: "Новости",
             ),
             BottomNavigationBarItem(icon: Icon(Icons.movie), label: "Фильмы"),
-            BottomNavigationBarItem(icon: Icon(Icons.tv), label: "Новости"),
+            BottomNavigationBarItem(icon: Icon(Icons.tv), label: "Сериалы"),
           ],
         ));
   }
