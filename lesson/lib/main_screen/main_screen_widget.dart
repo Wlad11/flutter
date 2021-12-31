@@ -9,11 +9,14 @@ class MainScreenWidget extends StatefulWidget {
 }
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
+  final int _selectTab = 1;//перестроит на ту Icon которая нужна
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text("TMDB")),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectTab,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
