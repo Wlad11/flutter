@@ -14,7 +14,14 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return Scaffold(
         appBar: AppBar(title: const Text("TMDB")),
         bottomNavigationBar: BottomNavigationBar(
-          items: [],
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Новости",
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.movie), label: "Фильмы"),
+            BottomNavigationBarItem(icon: Icon(Icons.tv), label: "Новости"),
+          ],
         ));
   }
 }

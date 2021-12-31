@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           return const Scaffold(
             body: Center(
               child: Text("Произошла ошибка навигации"),
+              
             ),
           );
         });
