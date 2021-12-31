@@ -10,6 +10,19 @@ class MainScreenWidget extends StatefulWidget {
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectTab = 1; //перестроит на ту Icon которая нужна
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Новости',
+    ),
+    Text(
+      'Фильмы',
+    ),
+    Text(
+      'Сериалы',
+    ),
+  ];
+
   void onSelectTab(int index) {
     if (_selectTab == index) return;
 //Будет окрашивать нажатую иконку
@@ -22,6 +35,9 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text("TMDB")),
+        body: Center(
+          child: _widgetOptions[_selectTab],//Перестраиват экран на нажатую иконку
+        ), //Отображает лист свверху
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectTab,
           items: const [
