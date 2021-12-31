@@ -9,7 +9,13 @@ class MainScreenWidget extends StatefulWidget {
 }
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
-  final int _selectTab = 1;//перестроит на ту Icon которая нужна
+  int _selectTab = 1; //перестроит на ту Icon которая нужна
+  void onSelectTab(int index) {
+//Будет окрашивать нажатую иконку
+    setState(() {
+      _selectTab = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
             BottomNavigationBarItem(icon: Icon(Icons.movie), label: "Фильмы"),
             BottomNavigationBarItem(icon: Icon(Icons.tv), label: "Сериалы"),
           ],
+          onTap: onSelectTab,
         ));
   }
 }
