@@ -79,7 +79,7 @@ class _FormWidget extends StatefulWidget {
 }
 
 class __FormWidgetState extends State<_FormWidget> {
-  final _loginTextControler = TextEditingController();
+  final _loginTextControler = TextEditingController(text: 'admin'); //Чтоб не воводить постоянно пароль
   final _passwordTextControler = TextEditingController();
    
   String? errorText = null;
@@ -140,6 +140,7 @@ class __FormWidgetState extends State<_FormWidget> {
         const SizedBox(height: 7),
         TextField(
             controller: _loginTextControler, //Какой вводит логин
+            
             decoration: textFildDecoration,
             style: const TextStyle(color: Colors.amber, fontSize: 22)),
         const SizedBox(height: 15),
