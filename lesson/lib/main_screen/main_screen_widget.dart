@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson/widgets/movi_list/movi_list_widget.dart';
 
 // Добавлен routers:
 class MainScreenWidget extends StatefulWidget {
@@ -9,15 +10,13 @@ class MainScreenWidget extends StatefulWidget {
 }
 
 class _MainScreenWidgetState extends State<MainScreenWidget> {
-  int _selectTab = 1; //перестроит на ту Icon которая нужна
+  int _selectTab = 1; //перестроит на ту Icon которая нужна Сечас на фильмы
 
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Новости',
     ),
-    Text(
-      'Фильмы',
-    ),
+    MoviListWidget(),
     Text(
       'Сериалы',
     ),
@@ -36,7 +35,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return Scaffold(
         appBar: AppBar(title: const Text("TMDB")),
         body: Center(
-          child: _widgetOptions[_selectTab],//Перестраиват экран на нажатую иконку
+          child:
+              _widgetOptions[_selectTab], //Перестраиват экран на нажатую иконку
         ), //Отображает лист свверху
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectTab,
