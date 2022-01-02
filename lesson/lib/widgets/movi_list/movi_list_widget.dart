@@ -12,13 +12,17 @@ class MoviListWidget extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: DecoratedBox(
+            child: Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black.withOpacity(0.5)),
-                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+                border: Border.all(color: Colors.black.withOpacity(0.5)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+              ),
+              clipBehavior: Clip.hardEdge, //Скругляет рамку как понял картинкy
               child: Row(
                 children: const [
-                  Image(image: AssetImage(AppImages.film)),
+                  Image(
+                    image: AssetImage(AppImages.film),
+                  )
                 ],
               ),
             ),
@@ -27,4 +31,4 @@ class MoviListWidget extends StatelessWidget {
   }
 }
 
-//TODO: Остановился 08.22 Добавил spider.yaml Добавляется cpider create
+//TODO: Остановился 17.37 Добавил image: AssetImage(AppImages.film),
