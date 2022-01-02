@@ -12,10 +12,14 @@ class MoviListWidget extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: Row(
-              children: const [
-                Image(image: AssetImage(AppImages.film)),
-              ],
+            child: DecoratedBox(
+              
+              decoration: null,
+              child: Row(
+                children: const [
+                  Image(image: AssetImage(AppImages.film)),
+                ],
+              ),
             ),
           );
         });
