@@ -14,7 +14,8 @@ class MoviListWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: DecoratedBox(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black.withOpacity(0.5))),
+                  border: Border.all(color: Colors.black.withOpacity(0.5)),
+                  borderRadius: const BorderRadius.all(Radius.circular(10))),
               child: Row(
                 children: const [
                   Image(image: AssetImage(AppImages.film)),
