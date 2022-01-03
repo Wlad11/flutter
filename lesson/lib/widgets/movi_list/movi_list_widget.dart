@@ -30,6 +30,7 @@ class MoviListWidget extends StatelessWidget {
               child: Row(
                 children: [
                   const Image(image: AssetImage(AppImages.film)),
+                  const SizedBox(width: 15),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
