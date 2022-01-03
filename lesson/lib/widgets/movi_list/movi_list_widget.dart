@@ -14,9 +14,11 @@ class MoviListWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Container(
               decoration: BoxDecoration(
+                color: Colors.white,
                 border: Border.all(color: Colors.black.withOpacity(0.5)),
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                boxShadow: [//Затемняет
+                boxShadow: [
+                  //Затемняет
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),
                     blurRadius: 8,
