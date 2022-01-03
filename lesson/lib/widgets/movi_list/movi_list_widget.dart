@@ -16,6 +16,13 @@ class MoviListWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black.withOpacity(0.5)),
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
+                boxShadow: [//Затемняет
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  )
+                ],
               ),
               clipBehavior: Clip.hardEdge, //Скругляет рамку как понял картинкy
               child: Row(
