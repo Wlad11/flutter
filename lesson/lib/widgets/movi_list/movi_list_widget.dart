@@ -34,8 +34,11 @@ class MoviListWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
+                        SizedBox(height: 20),
                         Text('Mortal Kombat'),
+                        SizedBox(height: 5),
                         Text('April 7, 2021 '),
+                        SizedBox(height: 20),
                         Text(
                           'Описание фильма If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explicit cast: If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explic',
                           maxLines: 2, //Это обрезает строки
