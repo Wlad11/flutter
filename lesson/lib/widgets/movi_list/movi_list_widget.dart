@@ -28,9 +28,17 @@ class MoviListWidget extends StatelessWidget {
               ),
               clipBehavior: Clip.hardEdge, //Скругляет рамку как понял картинкy
               child: Row(
-                children: const [
-                  Image(
-                    image: AssetImage(AppImages.film),
+                children: [
+                  const Image(image: AssetImage(AppImages.film)),
+                  Expanded(
+                    child: Column(
+                      children: const [
+                        Text('Mortal Kombat'),
+                        Text('April 7, 2021 '),
+                        Text(
+                            'Описание фильма If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explicit cast: If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explic')
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -39,5 +47,7 @@ class MoviListWidget extends StatelessWidget {
         });
   }
 }
+
+class Colum {}
 
 //TODO: Остановился 17.37 Добавил image: AssetImage(AppImages.film),
