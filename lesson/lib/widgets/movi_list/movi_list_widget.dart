@@ -30,24 +30,28 @@ class MoviListWidget extends StatelessWidget {
               child: Row(
                 children: [
                   const Image(image: AssetImage(AppImages.film)),
-                  const SizedBox(width: 15),
+                  const SizedBox(width: 15), //Отступ от картики
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         SizedBox(height: 20),
-                        Text('Mortal Kombat',
+                        Text(
+                            'Mortal Kombat dsghuhigdh hgaEPFGPGAGAFB HGDfG gSGSGsfg',
+                            maxLines: 1, //Это обрезает строки
+                            overflow: TextOverflow.ellipsis,
+                            //Показывает три точки в конце текста
                             style: TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: 5),
                         Text('April 7, 2021 ',
                             style: TextStyle(fontWeight: FontWeight.w500)),
                         SizedBox(height: 20),
                         Text(
-                          'Описание фильма If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explicit cast: If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explic',
-                          maxLines: 2, //Это обрезает строки
-                          overflow: TextOverflow
-                              .ellipsis, //Показывает три точки в конце текста
-                        )
+                            'Описание фильма If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explicit cast: If you believe that the runtime type of the argument will always be the same as the static type of the parameter, and you’re willing to risk having an exception thrown at runtime if you’re wrong, then add an explic',
+                            maxLines: 2, //Это обрезает строки
+                            overflow: TextOverflow.ellipsis
+                            //Показывает три точки в конце текста
+                            ),
                       ],
                     ),
                   )
