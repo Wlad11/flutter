@@ -102,6 +102,10 @@ class MoviListWidget extends StatelessWidget {
     return Stack(
       children: [
         ListView.builder(
+            padding: const EdgeInsets.only(top: 70),
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            //keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            //Хорошая вещь закрывает сама набор букв если скролишь
             itemCount: _movies.length,
             itemExtent: 163, // отвечает за высоту Если разная он не нужен
             itemBuilder: (BuildContext context, int index) {
@@ -177,7 +181,18 @@ class MoviListWidget extends StatelessWidget {
                 ),
               );
             }),
-        TextField(),
+        Padding(
+          //Это поиск
+          padding: const EdgeInsets.all(10.0),
+          child: TextField(
+            decoration: InputDecoration(
+              labelText: 'Поиск',
+              filled: true, //Это чтоб можно было задать колор как я понял
+              fillColor: Colors.white.withAlpha(215), //Делает прозрачным
+              border: const OutlineInputBorder(),
+            ),
+          ),
+        ),
       ],
     );
   }
