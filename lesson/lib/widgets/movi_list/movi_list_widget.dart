@@ -99,79 +99,87 @@ class MoviListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: _movies.length,
-        itemExtent: 163, // отвечает за высоту Если разная он не нужен
-        itemBuilder: (BuildContext context, int index) {
-          final movie = _movies[index];
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors
-                        .white, // если закоментить будет виден эфект при нажатии
-                    border: Border.all(color: Colors.black.withOpacity(0.5)),
-                    borderRadius: const BorderRadius.all(Radius.circular(10)),
-                    boxShadow: [
-                      //Затемняет
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 8,
-                        offset: const Offset(0, 2),
-                      )
-                    ],
-                  ),
-                  clipBehavior:
-                      Clip.hardEdge, //Скругляет рамку как понял картинкy
-                  child: Row(
-                    children: [
-                      Image(image: AssetImage(movie.imageName)),
-                      const SizedBox(width: 15), //Отступ от картики
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 20),
-                            Text(movie.title,
-                                maxLines: 1, //Это обрезает строки
-                                overflow: TextOverflow.ellipsis,
-                                //Показывает три точки в конце текста
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold)),
-                            const SizedBox(height: 5),
-                            Text(movie.time,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.w500)),
-                            const SizedBox(height: 20),
-                            Text(movie.description,
-                                maxLines: 2, //Это обрезает строки
-                                overflow: TextOverflow.ellipsis
-                                //Показывает три точки в конце текста
-                                ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+    return Stack(
+      children: [
+        ListView.builder(
+            itemCount: _movies.length,
+            itemExtent: 163, // отвечает за высоту Если разная он не нужен
+            itemBuilder: (BuildContext context, int index) {
+              final movie = _movies[index];
+              return Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors
+                            .white, // если закоментить будет виден эфект при нажатии
+                        border:
+                            Border.all(color: Colors.black.withOpacity(0.5)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        boxShadow: [
+                          //Затемняет
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          )
+                        ],
+                      ),
+                      clipBehavior:
+                          Clip.hardEdge, //Скругляет рамку как понял картинкy
+                      child: Row(
+                        children: [
+                          Image(image: AssetImage(movie.imageName)),
+                          const SizedBox(width: 15), //Отступ от картики
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(height: 20),
+                                Text(movie.title,
+                                    maxLines: 1, //Это обрезает строки
+                                    overflow: TextOverflow.ellipsis,
+                                    //Показывает три точки в конце текста
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
+                                const SizedBox(height: 5),
+                                Text(movie.time,
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w500)),
+                                const SizedBox(height: 20),
+                                Text(movie.description,
+                                    maxLines: 2, //Это обрезает строки
+                                    overflow: TextOverflow.ellipsis
+                                    //Показывает три точки в конце текста
+                                    ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Material(
+                      //Material специальный виджет для InkWell
+                      color: Colors.transparent,
+                      child: InkWell(
+                        //Вызывает визуальный эфект при нажатии
+                        borderRadius: BorderRadius.circular(
+                            10), // Бывает InkWell не скругляет
+                        onTap: () {
+                          print(777);
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                Material(
-                  //Material специальный виджет для InkWell
-                  color: Colors.transparent,
-                  child: InkWell(
-                    //Вызывает визуальный эфект при нажатии
-                    borderRadius: BorderRadius.circular(
-                        10), // Бывает InkWell не скругляет
-                    onTap: () {
-                      print(777);
-                    },
-                  ),
-                ),
-              ],
-            ),
-          );
-        });
+              );
+            }),
+        TextField(),
+      ],
+    );
   }
 }
 
