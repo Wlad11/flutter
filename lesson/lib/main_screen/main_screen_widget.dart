@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lesson/widgets/movi_list/movi_list_widget.dart';
 
-class Movi {
-  //Будут хранится данные для поиска
-  final String imageName;
-  final String title;
-  final String time;
-  final String description;
-
-  Movi(this.imageName, this.title, this.time, this.description);
-}
-
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({Key? key}) : super(key: key);
 
