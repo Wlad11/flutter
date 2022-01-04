@@ -11,12 +11,12 @@ class MainScreenWidget extends StatefulWidget {
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectTab = 1; //перестроит на ту Icon которая нужна Сечас на фильмы
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Text(
       'Новости',
     ),
     MoviListWidget(),
-    Text(
+    const Text(
       'Сериалы',
     ),
   ];
