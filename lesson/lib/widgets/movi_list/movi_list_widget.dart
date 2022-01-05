@@ -15,7 +15,15 @@ class Movi {
       required this.description});
 }
 
-class MoviListWidget extends StatelessWidget {
+//Конвертировал в statefulWidget
+class MoviListWidget extends StatefulWidget {
+  const MoviListWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MoviListWidget> createState() => _MoviListWidgetState();
+}
+
+class _MoviListWidgetState extends State<MoviListWidget> {
   final _movies = [
     Movi(
       imageName: AppImages.film,
@@ -95,8 +103,8 @@ class MoviListWidget extends StatelessWidget {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
   ];
+
   final _serhController = TextEditingController();
-  MoviListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
