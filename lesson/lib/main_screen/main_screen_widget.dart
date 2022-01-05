@@ -11,15 +11,15 @@ class MainScreenWidget extends StatefulWidget {
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectTab = 1; //перестроит на ту Icon которая нужна Сечас на фильмы
 
-  static final List<Widget> _widgetOptions = <Widget>[
-    const Text(
-      'Новости',
-    ),
-    MoviListWidget(),
-    const Text(
-      'Сериалы',
-    ),
-  ];
+  // static final List<Widget> _widgetOptions = <Widget>[
+  //   const Text(
+  //     'Новости',
+  //   ),
+  //   MoviListWidget(),
+  //   const Text(
+  //     'Сериалы',
+  //   ),
+  // ];
 
   void onSelectTab(int index) {
     if (_selectTab == index) return;
@@ -33,10 +33,22 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text("TMDB")),
-        body: Center(
-          child:
-              _widgetOptions[_selectTab], //Перестраиват экран на нажатую иконку
-        ), //Отображает лист свверху
+        body: IndexedStack(
+          index: _selectTab, //Без него будет хреново показывать
+          children: const [
+            Text(
+              'Новости',
+            ),
+            MoviListWidget(),
+            Text(
+              'Сериалы',
+            ),
+          ],
+        ),
+        // body: Center(
+        //   child:
+        //       _widgetOptions[_selectTab], //Перестраиват экран на нажатую иконку
+        // ), //Отображает лист свверху
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectTab,
           items: const [

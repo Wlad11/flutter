@@ -27,7 +27,42 @@ class _MoviListWidgetState extends State<MoviListWidget> {
   final _movies = [
     Movi(
       imageName: AppImages.film,
-      title: "Смертельная Битва",
+      title: "Человек Паук",
+      time: "April 7, 2022",
+      description:
+          "Описание фильма If you believe that the runtime type of the argument will always be",
+    ),
+    Movi(
+      imageName: AppImages.film,
+      title: "Лошадь",
+      time: "April 7, 2022",
+      description:
+          "Описание фильма If you believe that the runtime type of the argument will always be",
+    ),
+    Movi(
+      imageName: AppImages.film,
+      title: "Путин пидр",
+      time: "April 7, 2022",
+      description:
+          "Описание фильма If you believe that the runtime type of the argument will always be",
+    ),
+    Movi(
+      imageName: AppImages.film,
+      title: "Шакал",
+      time: "April 7, 2022",
+      description:
+          "Описание фильма If you believe that the runtime type of the argument will always be",
+    ),
+    Movi(
+      imageName: AppImages.film,
+      title: "Огненая Битва",
+      time: "April 7, 2022",
+      description:
+          "Описание фильма If you believe that the runtime type of the argument will always be",
+    ),
+    Movi(
+      imageName: AppImages.film,
+      title: "Последняя Битва",
       time: "April 7, 2022",
       description:
           "Описание фильма If you believe that the runtime type of the argument will always be",
@@ -62,55 +97,40 @@ class _MoviListWidgetState extends State<MoviListWidget> {
     ),
     Movi(
       imageName: AppImages.film,
-      title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "Смертельная Битва",
+      title: "lohad",
       time: "April 7, 2022",
       description:
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
   ];
+  //Слушатель событий что пишут в поиске внизу тоже
+  var _filtrMovies = <Movi>[];
 
   final _serhController = TextEditingController();
 
   //Слушатель событий что пишут в поиске
+  void _searhMovies() {
+    final query = _serhController.text;
+    if (query.isNotEmpty) {
+      //Если не пустой запрос то проводим поиск
+      _filtrMovies = _movies.where((Movi movi) {
+        return movi.title.toLowerCase().contains(query.toLowerCase());
+        //Все буквы перевел в нижний регистр
+      }).toList();
+    } else {
+      _filtrMovies = _movies;
+      //Если запрос пустой показываем все фильмы
+    }
+
+    setState(() {}); //без него не будет работать
+  }
+
   @override
   void initState() {
     super.initState();
-    _serhController.addListener(() {});
+    // _searhMovies(); //Нужно вызвать чтоб сразу заполнял фильмами
+    _filtrMovies = _movies; // Вот так попроще вызвать все фильмы
+    _serhController.addListener(_searhMovies);
   }
 
   @override
@@ -122,10 +142,12 @@ class _MoviListWidgetState extends State<MoviListWidget> {
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             //keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             //Хорошая вещь закрывает сама набор букв если скролишь
-            itemCount: _movies.length,
+            //itemCount: _movies.length,
+            itemCount: _filtrMovies.length,
             itemExtent: 163, // отвечает за высоту Если разная он не нужен
             itemBuilder: (BuildContext context, int index) {
-              final movie = _movies[index];
+              // final movie = _movies[index];
+              final movie = _filtrMovies[index];
               return Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
