@@ -95,6 +95,7 @@ class MoviListWidget extends StatelessWidget {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
   ];
+  final _serhController = TextEditingController();
   MoviListWidget({Key? key}) : super(key: key);
 
   @override
@@ -200,4 +201,4 @@ class MoviListWidget extends StatelessWidget {
 
 class Colum {}
 
-//TODO: Остановился 17.37 Добавил image: AssetImage(AppImages.film),
+//TODO: Остановился 11.37 Добавил image: AssetImage(AppImages.film),
