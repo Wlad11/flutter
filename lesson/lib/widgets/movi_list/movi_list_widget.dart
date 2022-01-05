@@ -186,6 +186,7 @@ class MoviListWidget extends StatelessWidget {
           //Это поиск
           padding: const EdgeInsets.all(10.0),
           child: TextField(
+            controller: _serhController,
             decoration: InputDecoration(
               labelText: 'Поиск',
               filled: true, //Это чтоб можно было задать колор как я понял
