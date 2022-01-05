@@ -106,6 +106,13 @@ class _MoviListWidgetState extends State<MoviListWidget> {
 
   final _serhController = TextEditingController();
 
+  //Слушатель событий что пишут в поиске
+  @override
+  void initState() {
+    super.initState();
+    _serhController.addListener(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
