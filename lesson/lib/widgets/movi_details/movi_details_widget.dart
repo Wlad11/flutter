@@ -12,7 +12,11 @@ class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('TMB')),
+      appBar: AppBar(title: const Text('Название фильма: <tksq Zcnht,')),
+      body: ListView(
+        children: [],
+      ),
     );
   }
 }
+//TODO: Остановился 24.45

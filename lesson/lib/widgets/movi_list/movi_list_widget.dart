@@ -247,4 +247,4 @@ class _MoviListWidgetState extends State<MoviListWidget> {
 
 class Colum {}
 
-//TODO: Остановился 11.37 Добавил image: AssetImage(AppImages.film),
+
