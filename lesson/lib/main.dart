@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lesson/Theme/app_colors.dart';
 import 'package:lesson/widgets/aut/aut_widget.dart';
+import 'package:lesson/widgets/movi_details/movi_details_widget.dart';
 
 import 'main_screen/main_screen_widget.dart';
 
@@ -29,6 +30,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/auth': (context) => const AutWidget(),
         '/main_screen': (context) => const MainScreenWidget(),
+        '/main_screen/widgets/movi_details': (context) =>
+            const MoviDetailsWidget(),
       },
       //home: const AutWidget()
       initialRoute:

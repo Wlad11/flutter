@@ -3,13 +3,15 @@ import 'package:lesson/resources/resources.dart';
 
 class Movi {
   //Будут хранится данные для поиска
+  final int id;
   final String imageName;
   final String title;
   final String time;
   final String description;
 
   Movi(
-      {required this.imageName,
+      {required this.id,
+      required this.imageName,
       required this.title,
       required this.time,
       required this.description});
@@ -133,6 +135,10 @@ class _MoviListWidgetState extends State<MoviListWidget> {
     _serhController.addListener(_searhMovies);
   }
 
+  void _onMoviTap(int index) {
+    Navigator.of(context).pushNamed('/main_screen/widgets/movi_details');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -210,9 +216,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
                         //Вызывает визуальный эфект при нажатии
                         borderRadius: BorderRadius.circular(
                             10), // Бывает InkWell не скругляет
-                        onTap: () {
-                          print(777);
-                        },
+                        onTap: () => _onMoviTap(index),
                       ),
                     ),
                   ],
