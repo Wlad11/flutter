@@ -32,8 +32,13 @@ class MyApp extends StatelessWidget {
         '/auth': (context) => const AutWidget(),
         '/main_screen': (context) => const MainScreenWidget(),
         '/main_screen/movi_details': (context) {
-          final id = ModalRoute.of(context)!.settings.arguments as int;
-          return MoviDetailsWidget(moviId: id);
+          //Он поставил аргументс я оставлю ид
+          final id = ModalRoute.of(context)?.settings.arguments;
+          if (id is int) {
+            return MoviDetailsWidget(moviId: id);
+          } else {
+            return const MoviDetailsWidget(moviId: 0);
+          }
         },
       },
       //home: const AutWidget()
