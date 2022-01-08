@@ -140,8 +140,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
 
   void _onMoviTap(int index) {
     final id = _movies[index].id;
-    Navigator.of(context)
-        .pushNamed('/main_screen/widgets/movi_details', arguments: id);
+    Navigator.of(context).pushNamed('/main_screen/movi_details', arguments: id);
   }
 
   @override

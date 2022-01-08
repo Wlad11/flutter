@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MoviDetailsWidget extends StatefulWidget {
-  const MoviDetailsWidget({ Key? key }) : super(key: key);
+  final int moviId;
+  const MoviDetailsWidget({Key? key, required this.moviId}) : super(key: key);
 
   @override
   _MoviDetailsWidgetState createState() => _MoviDetailsWidgetState();
@@ -10,8 +11,6 @@ class MoviDetailsWidget extends StatefulWidget {
 class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
