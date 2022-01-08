@@ -11,6 +11,8 @@ class MoviDetailsWidget extends StatefulWidget {
 class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: const Text('TMB')),
+    );
   }
 }
