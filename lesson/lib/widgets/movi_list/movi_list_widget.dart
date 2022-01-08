@@ -28,6 +28,7 @@ class MoviListWidget extends StatefulWidget {
 class _MoviListWidgetState extends State<MoviListWidget> {
   final _movies = [
     Movi(
+      id: 1,
       imageName: AppImages.film,
       title: "Человек Паук",
       time: "April 7, 2022",
@@ -35,6 +36,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 2,
       imageName: AppImages.film,
       title: "Лошадь",
       time: "April 7, 2022",
@@ -42,6 +44,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 3,
       imageName: AppImages.film,
       title: "Путин пидр",
       time: "April 7, 2022",
@@ -49,6 +52,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 4,
       imageName: AppImages.film,
       title: "Шакал",
       time: "April 7, 2022",
@@ -56,6 +60,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 5,
       imageName: AppImages.film,
       title: "Огненая Битва",
       time: "April 7, 2022",
@@ -63,6 +68,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 5,
       imageName: AppImages.film,
       title: "Последняя Битва",
       time: "April 7, 2022",
@@ -70,6 +76,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 7,
       imageName: AppImages.film,
       title: "Смертельная Битва",
       time: "April 7, 2022",
@@ -77,6 +84,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 8,
       imageName: AppImages.film,
       title: "Смертельная Битва",
       time: "April 7, 2022",
@@ -84,6 +92,7 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 9,
       imageName: AppImages.film,
       title: "Смертельная Битва",
       time: "April 7, 2022",
@@ -91,15 +100,9 @@ class _MoviListWidgetState extends State<MoviListWidget> {
           "Описание фильма If you believe that the runtime type of the argument will always be",
     ),
     Movi(
+      id: 10,
       imageName: AppImages.film,
       title: "Смертельная Битва",
-      time: "April 7, 2022",
-      description:
-          "Описание фильма If you believe that the runtime type of the argument will always be",
-    ),
-    Movi(
-      imageName: AppImages.film,
-      title: "lohad",
       time: "April 7, 2022",
       description:
           "Описание фильма If you believe that the runtime type of the argument will always be",
