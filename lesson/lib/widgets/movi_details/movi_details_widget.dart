@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson/widgets/movi_details/movi_details_main_info_widget.dart';
 
 class MoviDetailsWidget extends StatefulWidget {
   final int moviId;
@@ -14,7 +15,9 @@ class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
     return Scaffold(
       appBar: AppBar(title: const Text('Название фильма: <tksq Zcnht,')),
       body: ListView(
-        children: [],
+        children: const [
+          MoviDetailsVainInfoWidget(),
+        ],
       ),
     );
   }
