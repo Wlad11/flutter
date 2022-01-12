@@ -10,6 +10,7 @@ class MoviDetailsVainInfoWidget extends StatelessWidget {
     return Column(
       children: const [
         _TopPosterWidget(),
+        _MoviNameWidget(),
       ],
     );
   }
@@ -35,12 +36,20 @@ class _TopPosterWidget extends StatelessWidget {
 }
 
 class _MoviNameWidget extends StatelessWidget {
-  const _MoviNameWidget({ Key? key }) : super(key: key);
+  const _MoviNameWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return RichText(
+      maxLines: 3, //null,
+      text: const TextSpan(children: [
+        TextSpan(
+            text: 'Название фильма жвппвП7упа',
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 21)),
+        TextSpan(
+            text: ' (2021)',
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 19)),
+      ]),
     );
   }
 }

@@ -14,10 +14,13 @@ class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Название фильма: <tksq Zcnht,')),
-      body: ListView(
-        children: const [
-          MoviDetailsVainInfoWidget(),
-        ],
+      body: ColoredBox(
+        color: const Color.fromRGBO(24, 23, 27, 1.0),
+        child: ListView(
+          children: const [
+            MoviDetailsVainInfoWidget(),
+          ],
+        ),
       ),
     );
   }
