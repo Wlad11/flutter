@@ -10,7 +10,10 @@ class MoviDetailsVainInfoWidget extends StatelessWidget {
     return Column(
       children: const [
         _TopPosterWidget(),
-        _MoviNameWidget(),
+        Padding(
+          padding: EdgeInsets.all(10.0),
+          child: _MoviNameWidget(),
+        ),
       ],
     );
   }
@@ -44,7 +47,7 @@ class _MoviNameWidget extends StatelessWidget {
       maxLines: 3, //null,
       text: const TextSpan(children: [
         TextSpan(
-            text: 'Название фильма жвппвП7упа',
+            text: 'Название фильма жвппвП fgfgs',
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 21)),
         TextSpan(
             text: ' (2021)',
