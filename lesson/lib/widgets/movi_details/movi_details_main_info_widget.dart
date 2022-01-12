@@ -14,7 +14,10 @@ class MoviDetailsVainInfoWidget extends StatelessWidget {
           padding: EdgeInsets.all(10.0),
           child: _MoviNameWidget(),
         ),
-        _SummeryWidget(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+          child: _SummeryWidget(),
+        ),
       ],
     );
   }
@@ -64,7 +67,13 @@ class _SummeryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Text(
+      'R 04/29/2021 (us) 1h 49m Action, Adventure, Thriller, War',
+      maxLines: 3,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontWeight: FontWeight.w600, fontSize: 19, color: Colors.white60),
+    );
   }
 }
-//TODO: Остановился 31:43 Надо другой урок смотреть
+//TODO: Осталось  до конца 81:11 Верстает другой блок доделать самому
