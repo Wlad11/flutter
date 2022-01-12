@@ -22,4 +22,3 @@ class _MoviDetailsWidgetState extends State<MoviDetailsWidget> {
     );
   }
 }
-//TODO: Остановился 24.45
