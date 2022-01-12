@@ -14,6 +14,7 @@ class MoviDetailsVainInfoWidget extends StatelessWidget {
           padding: EdgeInsets.all(10.0),
           child: _MoviNameWidget(),
         ),
+        _SummeryWidget(),
       ],
     );
   }
@@ -55,6 +56,15 @@ class _MoviNameWidget extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 19)),
       ]),
     );
+  }
+}
+
+class _SummeryWidget extends StatelessWidget {
+  const _SummeryWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
 //TODO: Остановился 31:43 Надо другой урок смотреть
