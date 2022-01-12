@@ -33,4 +33,15 @@ class _TopPosterWidget extends StatelessWidget {
     );
   }
 }
+
+class _MoviNameWidget extends StatelessWidget {
+  const _MoviNameWidget({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+}
 //TODO: Остановился 31:43 Надо другой урок смотреть
