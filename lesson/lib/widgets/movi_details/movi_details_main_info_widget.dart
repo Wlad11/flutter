@@ -44,6 +44,7 @@ class _MoviNameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      textAlign: TextAlign.center,
       maxLines: 3, //null,
       text: const TextSpan(children: [
         TextSpan(
